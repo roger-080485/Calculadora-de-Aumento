@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo Aumento</title>
+    <style>
+        input{
+            margin-left: 20px;
+            padding: 20px;
+        }
+        label{
+            font-size: 20px;
+        }
+        #principal{
+            display: block;
+            margin: auto;
+           text-align: center;
+           width: 400px;
+           height: 600px;
+        }
+        legend{
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        fieldset{
+            border-radius: 5px;
+            border-color: rgba(0, 0, 0, 0.089);
+        }
+    </style>
+</head>
+<body>
+
+    <form action="cadastro.php" method="post" autocomplete="on">
+
+        <fieldset id="principal">
+            <legend id="cabecalho">Cálculo de Aumento de Salario</legend>
+            <p>
+                <label for="ihora">Valor Hora R$:</label>
+                <input type="number" name="hora" id="ihora" min="1" max="100" step="0.1" oninput="isal.innerHTML = Number(ihora.value) * 220">
+            </p>
+            <p>
+                <label for="isal">Salario Atual R$:</label>
+                <output type="number" id="isal" placeholder="Informe o seu salário">0</output>
+            </p>
+            <p><label for="iporc">% de aumento:</label>
+                <input type="number" name="porc" id="iporc" placeholder="Qual o % de aumento"min="0" max="10" step="0.1" size="50" oninput="iaumento.innerHTML = Number(isal.value) + (Number(isal.value) * (Number(iporc.value))/100)">
+            
+            </p>
+                <p>
+                    <label for="iaumento">Salário Novo R$:</label>
+                    <output id="iaumento">0</output>
+                </p>
+        </fieldset>
+
+    </form>
+    
+</body>
+</html>
